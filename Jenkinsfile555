@@ -3,7 +3,7 @@ pipeline{
 agent any
 
 parameters {
-  choice choices: ['Test', 'master', 'development'], name: 'Multibranch'
+  choice choices: ${Multibranch} ['Test', 'master', 'development'], name: 'Multibranch'
 }
 
 tools {
