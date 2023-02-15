@@ -1,0 +1,26 @@
+pipeline{
+
+agent any
+
+tools {
+  maven 'maven-3.9.0'
+}
+
+stages{
+
+  stage('Git checkout code'){
+  steps{
+  git credentialsId: 'c33370d4-efe6-497b-957f-342d6b0fa334', url: 'https://github.com/shivaprasad524/maven-web-application.git'
+ 
+}
+}
+
+stage('Build the artifact with Maven'){
+steps{
+
+sh "mvn clean package"
+
+}
+}
+}
+}
